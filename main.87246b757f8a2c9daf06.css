@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #f6d365;
+  --peach: #fda085;
+  --orange: #ff6f47;
+  --green: rgb(73, 204, 73);
+  --disabled: #bfbfbf;
+}
+
+body {
+  background-image: linear-gradient(120deg, var(--yellow), var(--peach));
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  font-size: 10px;
+}
+
+header {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+header,
+.todo-input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-input-wrapper input,
+.todo-button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+.todo-button {
+  color: var(--peach);
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-button:hover {
+  background: var(--peach);
+  color: white;
+}
+
+.todo-button_disabled {
+  pointer-events: none;
+  color: var(--disabled);
+}
+
+.todo-input-wrapper {
+  position: relative;
+}
+
+.todo-helper {
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  visibility: hidden;
+}
+
+.todo-helper_visible {
+  visibility: visible;
+}
+
+.todo-container {
+  margin-top: 5rem;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: black;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  transition: all 0.5s ease-in-out;
+  width: 300px;
+}
+
+.todo-text {
+  font-size: 1.5rem;
+  flex: 1;
+}
+
+.todo-check-button,
+.todo-remove-button {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.todo-check-button {
+  margin-left: 0.5rem;
+  background: var(--green);
+}
+
+.todo-item_completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-item_fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  color: var(--orange);
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.todo-select-wrapper {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-select-wrapper::after {
+  content: "\25BC";
+  position: absolute;
+  background: var(--orange);
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.todo-select-wrapper:hover::after {
+  background: white;
+  color: var(--orange);
+}
